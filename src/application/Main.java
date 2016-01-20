@@ -1,10 +1,12 @@
 package application;
 	
 import java.io.IOException;
+import java.util.HashMap;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import modulos.Materia;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -13,13 +15,13 @@ public class Main extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-	//private BorderPane RubikInterface;
 	private Scene scene;
+	public static HashMap<String, Materia> mp = new HashMap<String, Materia>();
 	
 	@Override
 	public void start(Stage primaryStage) {
 		 this.primaryStage = primaryStage;
-		 this.primaryStage.setTitle("Cubo Rubik");  
+		 this.primaryStage.setTitle("Administrador de Mallas Curriculares");  
 		 
 		 initRootLayout();
 	     
@@ -42,7 +44,12 @@ public class Main extends Application {
         }
     }
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		mp = Materia.cargarMaterias();
+		
 		launch(args);
+		
+		Materia.guardarMaterias(mp);
+
 	}
 }
