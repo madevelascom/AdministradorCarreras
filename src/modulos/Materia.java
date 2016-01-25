@@ -84,9 +84,8 @@ public class Materia {
 			linea		 = br.readLine();
 			while (linea != null){
 				String []atributos = linea.split("\\|");
-				int ct = Integer.parseInt(atributos[3]);
-				int cp = Integer.parseInt(atributos[4]);
-				Materia  mat = new Materia (atributos[0],atributos[1],atributos[2],ct,cp);
+				Materia  mat = new Materia (atributos[0],atributos[1],atributos[2],
+						Integer.parseInt(atributos[3]),Integer.parseInt(atributos[4]));
 				materiaData.add(mat);
 				linea	=br.readLine();
 			}					
@@ -111,8 +110,10 @@ public class Materia {
 			
 			for (Materia value : materiaData) {
 				bw.newLine();
-			    bw.write(value.getCodigo()+"|"+value.getNom()+"|"+value.getDescription()+"|"+
-			    		 value.getCret()+"|"+value.getCrep());
+				System.out.println(value.getCodigo().getValue()+"|"+value.getNom().getValue()+"|"+value.getDescription().getValue()+"|"+
+			    		 value.getCret().getValue()+"|"+value.getCrep().getValue());
+			    bw.write(value.getCodigo().getValue()+"|"+value.getNom().getValue()+"|"+value.getDescription().getValue()+"|"+
+			    		 value.getCret().getValue()+"|"+value.getCrep().getValue());
 			}
 			
 		}catch(IOException ex){

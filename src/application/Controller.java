@@ -5,16 +5,13 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-<<<<<<< HEAD
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import modulos.Carrera;
 import modulos.Materia;
 
-=======
-//ggfhhj
->>>>>>> origin/master
 public class Controller extends Main implements Initializable{
 
 	@FXML
@@ -37,7 +34,7 @@ public class Controller extends Main implements Initializable{
 	private Label codMat, nomMat, desMat, cteo, cprc;
 	
 	@FXML
-	public void initialize(URL url, ResourceBundle arg1) {
+	public void initialize() {
 		
 		materiaTable.setItems(Main.getMateriaData());
 		nomMateria.setCellValueFactory(cellData -> cellData.getValue().getNom());
@@ -47,6 +44,12 @@ public class Controller extends Main implements Initializable{
 		nomCarrera.setCellValueFactory(cellData -> cellData.getValue().getNombre());
 		codCarrera.setCellValueFactory(cellData -> cellData.getValue().getCodigo());
   
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
