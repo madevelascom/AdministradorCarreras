@@ -108,8 +108,8 @@ public class Carrera {
 			
 			for (Carrera value : carreraData) {
 				bw.newLine();
-			    bw.write(value.getCodigo()+"|"+value.getNombre()+"|"+value.getFacultad()+"|"+
-			    		 value.getDescription()+"|"+value.getEstudiantes());
+			    bw.write(value.getCodigo().getValue()+"|"+value.getNombre().getValue()+"|"+value.getFacultad().getValue()+"|"+
+			    		 value.getDescription().getValue()+"|"+value.getEstudiantes().getValue());
 			}
 			
 		}catch(IOException ex){
