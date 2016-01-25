@@ -10,13 +10,14 @@ import javafx.stage.Stage;
 import modulos.Carrera;
 import modulos.Materia;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
 	
 	private Stage primaryStage;
-	private BorderPane rootLayout;
+	public BorderPane rootLayout;
 	private Scene scene;
 	public static ObservableList<Materia> materiaData = FXCollections.observableArrayList();
 	public static ObservableList<Carrera> carreraData = FXCollections.observableArrayList();
@@ -25,6 +26,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		 this.primaryStage = primaryStage;
 		 this.primaryStage.setTitle("Administrador de Mallas Curriculares");  
+		 
+		 this.primaryStage.getIcons().add(new Image("file:resources/appIcon.png"));
 		 
 		 initRootLayout();
 	     
@@ -37,7 +40,6 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("Root.fxml"));
             rootLayout = (BorderPane) loader.load();
 
-            // Show the scene containing the root layout.
             scene = new Scene(rootLayout);           
             
             primaryStage.setScene(scene);
