@@ -2,101 +2,103 @@ package modulos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
+
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 public class Carrera {
-	private String codigo;
-	private String nombre;
-	private String facultad;
-	private String description;
-	private int estudiantes;
+	private StringProperty  codigo;
+	private StringProperty  nombre;
+	private StringProperty  facultad;
+	private StringProperty  description;
+	private IntegerProperty estudiantes;
 	private static URL url	= Carrera.class.getResource("carreras.sol");
 	
 	public Carrera(String codigo, String nombre, String facultad, String description, int estudiantes) {
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.facultad = facultad;
-		this.description = description;
-		this.estudiantes = estudiantes;
+		this.codigo = new SimpleStringProperty(codigo);
+		this.nombre = new SimpleStringProperty(nombre);
+		this.facultad = new SimpleStringProperty(facultad);
+		this.description = new SimpleStringProperty(description);
+		this.estudiantes = new SimpleIntegerProperty(estudiantes);
 	}
-
-	public String getCodigo() {
+	
+	public StringProperty getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(StringProperty codigo) {
 		this.codigo = codigo;
 	}
 
-	public String getNombre() {
+	public StringProperty getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(StringProperty nombre) {
 		this.nombre = nombre;
 	}
 
-	public String getFacultad() {
+	public StringProperty getFacultad() {
 		return facultad;
 	}
 
-	public void setFacultad(String facultad) {
+	public void setFacultad(StringProperty facultad) {
 		this.facultad = facultad;
 	}
 
-	public String getDescription() {
+	public StringProperty getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(StringProperty description) {
 		this.description = description;
 	}
 
-	public int getEstudiantes() {
+	public IntegerProperty getEstudiantes() {
 		return estudiantes;
 	}
 
-	public void setEstudiantes(int estudiantes) {
+	public void setEstudiantes(IntegerProperty estudiantes) {
 		this.estudiantes = estudiantes;
 	}
-	
-	public static HashMap<String, Carrera> cargarCarreras() throws IOException {
+
+	public static ObservableList<Carrera> cargarCarreras() throws IOException {
 		
-		File file = new File(url.getPath());
-		HashMap<String, Carrera> hm = new HashMap<String, Carrera>();
-		
-		if(file.exists()){
-			BufferedReader br 		= new BufferedReader(new FileReader(url.getPath()));
+		ObservableList<Carrera> carreraData = FXCollections.observableArrayList();
+		BufferedReader br 		= new BufferedReader(new FileReader(url.getPath()));
 			
-			try {
-				String linea = br.readLine();
-				linea		 = br.readLine();
-				while (linea != null){
-					String []atributos = linea.split("\\|");
-					Carrera  car = new Carrera (atributos[0],atributos[1],atributos[2],atributos[3],
-							Integer.parseInt(atributos[4]));
-					hm.put(car.getCodigo(), car);
-					linea	=br.readLine();
+		try {
+			String linea = br.readLine();
+			linea		 = br.readLine();
+			while (linea != null){
+				String []atributos = linea.split("\\|");
+				Carrera  car = new Carrera (atributos[0],atributos[1],atributos[2],atributos[3],
+						Integer.parseInt(atributos[4]));
+				carreraData.add(car);
+				linea	=br.readLine();
 				}					
-			}catch(FileNotFoundException ex) {
-	            System.out.println("No se puede abrir el archivo");                
-	        }catch(IOException ex){
-	        	 ex.printStackTrace();
-	        }finally{
-	        	br.close();
-	        }
-		}
-		
-	return hm;
+		}catch(FileNotFoundException ex) {
+	         System.out.println("No se puede abrir el archivo");                
+	    }catch(IOException ex){
+	    	ex.printStackTrace();
+	    }finally{
+	        br.close();
+	    }
+
+	return carreraData;
 	}
 	
-	public static void guardarCarreras(HashMap<String, Carrera> mp) throws IOException {
+	public static void guardarCarreras(ObservableList<Carrera> carreraData) throws IOException {
 		
 		FileWriter fl = new FileWriter(url.getPath());
 		BufferedWriter bw = new BufferedWriter(fl);
@@ -104,7 +106,7 @@ public class Carrera {
 		try {
 			bw.write("Codigo|Nombre|Facultad|Descripcion|Estudiantes");
 			
-			for (Carrera value : mp.values()) {
+			for (Carrera value : carreraData) {
 				bw.newLine();
 			    bw.write(value.getCodigo()+"|"+value.getNombre()+"|"+value.getFacultad()+"|"+
 			    		 value.getDescription()+"|"+value.getEstudiantes());

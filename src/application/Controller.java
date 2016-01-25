@@ -3,14 +3,46 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import modulos.Carrera;
+import modulos.Materia;
 
 public class Controller extends Main implements Initializable{
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+	@FXML
+	private TableView<Carrera> carreraTable;
+	@FXML
+	private TableView<Materia> materiaTable;
+	
+	@FXML 
+	private TableColumn<Carrera, String> nomCarrera;
+	@FXML 
+	private TableColumn<Carrera, String> codCarrera;
+	@FXML 
+	private TableColumn<Materia, String> nomMateria;
+	@FXML 
+	private TableColumn<Materia, String> codMateria;
+	
+	@FXML
+	private Label codCar, nomCar, facCar, desCar, cantCar;
+	@FXML
+	private Label codMat, nomMat, desMat, cteo, cprc;
+	
+	@FXML
+	public void initialize(URL url, ResourceBundle arg1) {
 		
+		materiaTable.setItems(Main.getMateriaData());
+		nomMateria.setCellValueFactory(cellData -> cellData.getValue().getNom());
+		codMateria.setCellValueFactory(cellData -> cellData.getValue().getCodigo());
+		
+		carreraTable.setItems(Main.getCarreraData());
+		nomCarrera.setCellValueFactory(cellData -> cellData.getValue().getNombre());
+		codCarrera.setCellValueFactory(cellData -> cellData.getValue().getCodigo());
+  
 	}
 
 }
