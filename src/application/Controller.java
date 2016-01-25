@@ -5,12 +5,16 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+<<<<<<< HEAD
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import modulos.Carrera;
 import modulos.Materia;
 
+=======
+//ggfhhj
+>>>>>>> origin/master
 public class Controller extends Main implements Initializable{
 
 	@FXML
