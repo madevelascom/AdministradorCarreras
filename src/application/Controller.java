@@ -2,11 +2,14 @@ package application;
 
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -49,6 +52,44 @@ public class Controller extends Main implements Initializable{
 	private Label ldesMat;
 	@FXML
 	private Label lcteo;
+	
+	@FXML
+	private void borrarMateria(){
+		 int selectedIndex = materiaTable.getSelectionModel().getSelectedIndex();
+		 if (selectedIndex >= 0) {
+			 Alert alert = new Alert(AlertType.CONFIRMATION);
+			 alert.setTitle("Confirmación de borrado");
+			 alert.setHeaderText("Vas a borrar la materia que escogiste");
+			 alert.setContentText("¿Estás seguro?");
+			 
+			 Optional<ButtonType> result = alert.showAndWait();
+			 
+			 if (result.get() == ButtonType.OK){
+				 materiaTable.getItems().remove(selectedIndex);
+				}  
+		 }
+		
+	}
+	@FXML
+		private void borrarCarrera(){
+		int selectedIndex = carreraTable.getSelectionModel().getSelectedIndex();
+		 if (selectedIndex >= 0) {
+			 Alert alert = new Alert(AlertType.CONFIRMATION);
+			 alert.setTitle("Confirmación de borrado");
+			 alert.setHeaderText("Vas a borrar la carrera que escogiste");
+			 alert.setContentText("¿Estás seguro?");
+			 
+			 Optional<ButtonType> result = alert.showAndWait();
+			 
+			 if (result.get() == ButtonType.OK){
+				 carreraTable.getItems().remove(selectedIndex);
+			 }			 
+		 }	
+	}
+	@FXML
+	private void borrarMalla(){
+		
+	}
 	
 	@FXML
 	public void initialize(URL url, ResourceBundle rb) {
@@ -101,5 +142,57 @@ public class Controller extends Main implements Initializable{
 			lcantCar.setText("");
 		}
 	}
+	
+	@FXML
+	private void handleNewCarrera() {
+	    Carrera temp = new Carrera();
+	    boolean okClicked = Main.showCarreraEditDialog(temp);
+	    if (okClicked) {
+	    	Main.getCarreraData().add(temp);
+	    }
+	}
 
+	@FXML
+	private void handleEditCarrera() {
+		int selectedIndex = carreraTable.getSelectionModel().getSelectedIndex();
+		
+		if (selectedIndex >= 0) {			
+			Carrera selected = carreraTable.getItems().get(selectedIndex);
+			if (selected != null) {
+		        boolean okClicked = Main.showCarreraEditDialog(selected);
+		        if (okClicked) {
+		            showCarreraDetails(selected);
+		        }
+		    } 
+		}
+		
+	    
+	}
+	
+	@FXML
+	private void handleNewMateria() {
+	    Materia temp = new Materia();
+	    boolean okClicked = Main.showMateriaEditDialog(temp);
+	    if (okClicked) {
+	    	Main.getMateriaData().add(temp);
+	    }
+	}
+	
+	@FXML
+	private void handleEditMateria() {
+		int selectedIndex = materiaTable.getSelectionModel().getSelectedIndex();
+		
+		if (selectedIndex >= 0) {			
+			Materia selected = materiaTable.getItems().get(selectedIndex);
+			if (selected != null) {
+		        boolean okClicked = Main.showMateriaEditDialog(selected);
+		        if (okClicked) {
+		            showMateriaDetails(selected);
+		        }
+		    } 
+		}
+		
+	    
+	}
+	
 }

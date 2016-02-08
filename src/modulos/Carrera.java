@@ -25,11 +25,19 @@ public class Carrera {
 	private static URL url	= Carrera.class.getResource("carreras.sol");
 	
 	public Carrera(String codigo, String nombre, String facultad, String description, int estudiantes) {
-		this.codigo = new SimpleStringProperty(codigo);
-		this.nombre = new SimpleStringProperty(nombre);
-		this.facultad = new SimpleStringProperty(facultad);
+		this.codigo 	= new SimpleStringProperty(codigo);
+		this.nombre 	= new SimpleStringProperty(nombre);
+		this.facultad	= new SimpleStringProperty(facultad);
 		this.description = new SimpleStringProperty(description);
 		this.estudiantes = new SimpleIntegerProperty(estudiantes);
+	}
+	
+	public Carrera(){
+		this.codigo 	= new SimpleStringProperty(" ");;
+		this.nombre 	= new SimpleStringProperty(" ");;
+		this.facultad 	= new SimpleStringProperty(" ");;
+		this.description = new SimpleStringProperty(" ");;
+		this.estudiantes = new SimpleIntegerProperty(0);
 	}
 	
 	public StringProperty getCodigo() {

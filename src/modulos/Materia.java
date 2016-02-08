@@ -25,11 +25,19 @@ public class Materia {
 	private static URL url	= Materia.class.getResource("materias.sol");
 	
 	public Materia(String codigo, String nom, String description, int cret, int crep) {
-		this.codigo = new SimpleStringProperty(codigo);
-		this.nom = new SimpleStringProperty(nom);
+		this.codigo 	= new SimpleStringProperty(codigo);
+		this.nom 		= new SimpleStringProperty(nom);
 		this.description = new SimpleStringProperty(description);
-		this.cret = new SimpleIntegerProperty(cret);
-		this.crep = new SimpleIntegerProperty(crep);
+		this.cret 		= new SimpleIntegerProperty(cret);
+		this.crep 		= new SimpleIntegerProperty(crep);
+	}
+	
+	public Materia(){
+		this.codigo 	= new SimpleStringProperty(" ");
+		this.nom 		= new SimpleStringProperty(" ");
+		this.description = new SimpleStringProperty(" ");
+		this.cret 		= new SimpleIntegerProperty(0);
+		this.crep 		= new SimpleIntegerProperty(0);
 	}
 
 	public StringProperty getCodigo() {
