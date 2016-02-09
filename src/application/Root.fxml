@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="200.0" prefWidth="200.0" styleClass="background" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab closable="false" text="Materias">
                <content>
-                  <SplitPane dividerPositions="0.26125" prefHeight="160.0" prefWidth="200.0">
+                  <SplitPane dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
@@ -69,7 +71,7 @@
           </Tab>
           <Tab closable="false" text="Carreras">
                <content>
-                  <SplitPane dividerPositions="0.26125" prefHeight="160.0" prefWidth="200.0">
+                  <SplitPane dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
@@ -126,9 +128,465 @@
                </content>
           </Tab>
             <Tab closable="false" text="Malla de las carreras">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@DarkTheme.css" />
-              </content>
+               <content>
+                  <SplitPane dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="204.0" styleClass="background" stylesheets="@DarkTheme.css">
+                           <children>
+                              <TableView fx:id="mallaTable" layoutX="7.0" layoutY="42.0" prefHeight="350.0" prefWidth="213.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="carrera" minWidth="97.0" prefWidth="97.0" text="Carrera" />
+                                    <TableColumn fx:id="version" minWidth="97.0" prefWidth="97.0" text="Versión" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <GridPane layoutX="14.0" layoutY="442.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Carrera" />
+                                    <Label text="Versión" GridPane.rowIndex="1" />
+                                    <Label text="Elaborado por" GridPane.rowIndex="2" />
+                                    <Label text="Fecha" GridPane.rowIndex="3" />
+                                    <Label fx:id="lCarrera" text="Label" GridPane.columnIndex="1" />
+                                    <Label fx:id="lVersion" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="lCreator" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label fx:id="lFecha" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background" stylesheets="@DarkTheme.css">
+                           <children>
+                              <GridPane layoutX="85.0" layoutY="293.0" prefHeight="587.0" prefWidth="561.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="45.33332824707031" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="42.333343505859375" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.333343505859375" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label styleClass="title-semester" text="Primer semestre">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Label>
+                                    <Label styleClass="label-semester" text="Segundo semestre" GridPane.columnIndex="1" />
+                                    <Label text="Tercer semestre" GridPane.columnIndex="2" />
+                                    <Label text="Cuarto semestre" GridPane.rowIndex="2" />
+                                    <Label text="Quinto semestre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="Sexto semestre" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Label text="Séptimo semestre" GridPane.rowIndex="4" />
+                                    <Label text="Octavo semestre" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="1">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom13" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre13" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor13" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom14" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre14" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor14" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom11" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre12" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom12" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom15" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom16" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre15" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre16" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre11" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod11" text="Label" />
+                                          <Label fx:id="cod12" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod13" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod14" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod15" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod16" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor12" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor11" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor15" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor16" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <Label text="Noveno Semestre" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="3">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom43" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre43" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor43" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom44" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre44" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor44" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom41" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre42" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom42" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom45" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom46" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre45" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre46" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre41" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod41" text="Label" />
+                                          <Label fx:id="cod42" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod43" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod44" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod45" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod46" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor42" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor41" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor45" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor46" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="5">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom73" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre73" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor73" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom74" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre74" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor74" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom71" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre72" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom72" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom75" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom76" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre75" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre76" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre71" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod71" text="Label" />
+                                          <Label fx:id="cod72" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod73" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod74" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod75" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod76" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor72" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor71" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor75" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor76" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom23" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre23" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor23" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom24" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre24" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor24" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom21" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre22" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom22" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom25" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom26" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre25" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre26" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre21" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod21" text="Label" />
+                                          <Label fx:id="cod22" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod23" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod24" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod25" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod26" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor22" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor21" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor25" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor26" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom53" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre53" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor53" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom54" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre54" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor54" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom51" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre52" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom52" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom55" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom56" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre55" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre56" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre51" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod51" text="Label" />
+                                          <Label fx:id="cod52" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod53" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod54" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod55" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod56" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor52" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor51" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor55" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor56" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom83" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre83" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor83" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom84" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre84" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor84" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom81" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre82" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom82" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom85" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom86" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre85" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre86" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre81" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod81" text="Label" />
+                                          <Label fx:id="cod82" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod83" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod84" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod85" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod86" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor82" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor81" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor85" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor86" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom33" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre33" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor33" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom34" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre34" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor34" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom31" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre32" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom32" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom35" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom36" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre35" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre36" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre31" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod31" text="Label" />
+                                          <Label fx:id="cod32" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod33" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod34" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod35" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod36" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor32" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor31" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor35" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor36" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom63" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre63" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor63" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom64" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre64" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor64" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom61" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre62" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom62" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom65" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom66" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre65" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre66" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre61" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod61" text="Label" />
+                                          <Label fx:id="cod62" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod63" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod64" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod65" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod66" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor62" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor61" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor65" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor66" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="nom93" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="pre93" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="cor93" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="nom94" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="pre94" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="cor94" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="nom91" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="pre92" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom92" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="nom95" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="nom96" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre95" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="pre96" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="pre91" text="Label" GridPane.columnIndex="2" />
+                                          <Label fx:id="cod91" text="Label" />
+                                          <Label fx:id="cod92" text="Label" GridPane.rowIndex="1" />
+                                          <Label fx:id="cod93" text="Label" GridPane.rowIndex="2" />
+                                          <Label fx:id="cod94" text="Label" GridPane.rowIndex="3" />
+                                          <Label fx:id="cod95" text="Label" GridPane.rowIndex="4" />
+                                          <Label fx:id="cod96" text="Label" GridPane.rowIndex="5" />
+                                          <Label fx:id="cor92" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="cor91" text="Label" GridPane.columnIndex="3" />
+                                          <Label fx:id="cor95" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="cor96" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                              <HBox layoutX="241.0" layoutY="605.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Nuevo" />
+                                    <Button mnemonicParsing="false" text="Editar" />
+                                    <Button mnemonicParsing="false" text="Borrar" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
             </Tab>
         </tabs>
       </TabPane>

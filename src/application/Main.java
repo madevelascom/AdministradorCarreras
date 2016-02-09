@@ -1,6 +1,7 @@
 package application;
 	
 import java.io.IOException;
+import java.util.HashMap;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -9,7 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modulos.Carrera;
+import modulos.MallaCurricular;
 import modulos.Materia;
+import modulos.Plan;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +26,8 @@ public class Main extends Application {
 	private Scene scene;
 	public static ObservableList<Materia> materiaData = FXCollections.observableArrayList();
 	public static ObservableList<Carrera> carreraData = FXCollections.observableArrayList();
+	public static ObservableList<MallaCurricular> mallaData = FXCollections.observableArrayList();
+	public static HashMap<String, ObservableList<Plan>> plansData = new HashMap<String, ObservableList<Plan>>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -121,14 +126,28 @@ public class Main extends Application {
 		return materiaData;
 	}
 	
+	public static ObservableList<MallaCurricular> getMallaData(){
+		return mallaData;
+	}
+	
+	
+	
 	public static void main(String[] args) throws IOException {
 		materiaData = Materia.cargarMaterias();
 		carreraData = Carrera.cargarCarreras();
+		mallaData = MallaCurricular.cargarMallas();
+		
+		for(MallaCurricular mal:mallaData){
+			plansData.put(mal.getLocation(), Plan.cargarPlan(mal.getLocation()));
+		}
 		
 		launch(args);
 		
 		Materia.guardarMaterias(materiaData);
 		Carrera.guardarCarreras(carreraData);
+		MallaCurricular.guardarMallas(mallaData);
+		
+
 
 	}
 }
