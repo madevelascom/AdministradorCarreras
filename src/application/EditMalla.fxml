@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MallaController">
+   <children>
+      <GridPane layoutX="189.0" layoutY="160.0" prefHeight="466.0" prefWidth="718.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Primer semestre" />
+            <Label text="Cuarto semestre" GridPane.rowIndex="2" />
+            <Label text="Quinto semestre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Segundo Semestre" GridPane.columnIndex="1" />
+            <Label text="Tercer Semestre" GridPane.columnIndex="2" />
+            <Label text="Sexto semestre" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Septimo semestre" GridPane.rowIndex="4" />
+            <Label text="Octavo semestre" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Noveno semestre" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat12" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat14" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat13" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat15" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat11" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat16" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre11" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre12" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre13" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre14" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre15" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre16" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor11" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor12" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor13" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor14" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor15" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor16" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito I" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres11" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres12" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres13" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres14" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres15" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres16" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat22" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat24" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat23" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat25" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat21" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat26" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre21" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre22" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre23" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre24" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre25" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre26" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor21" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor22" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor23" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor24" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor25" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor26" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito I" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres21" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres22" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres23" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres24" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres25" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres26" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat42" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat44" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat43" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat45" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat41" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat46" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre41" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre42" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre43" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre44" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre45" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre46" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor41" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor42" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor43" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor44" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor45" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor46" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres41" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres42" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres43" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres44" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres45" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres46" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat52" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat54" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat53" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat55" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat51" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat56" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre51" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre52" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre53" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre54" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre55" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre56" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor51" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor52" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor53" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor54" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor55" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor56" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres51" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres52" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres53" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres54" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres55" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres56" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat82" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat84" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat83" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat85" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat81" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat86" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre81" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre82" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre83" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre84" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre85" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre86" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor81" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor82" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor83" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor84" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor85" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor86" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres81" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres82" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres83" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres84" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres85" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres86" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="5">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat72" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat74" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat73" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat75" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat71" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat76" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre71" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre72" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre73" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre74" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre75" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre76" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor71" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor72" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor73" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor74" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor75" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor76" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres71" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres72" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres73" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres74" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres75" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres76" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat32" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat34" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat33" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat35" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat31" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat36" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre31" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre32" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre33" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre34" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre35" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre36" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor31" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor32" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor33" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor34" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor35" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor36" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres31" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres32" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres33" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres34" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres35" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres36" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat62" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat64" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat63" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat65" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat61" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat66" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre61" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre62" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre63" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre64" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre65" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre66" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor61" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor62" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor63" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor64" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor65" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor66" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres61" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres62" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres63" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres64" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres65" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres66" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ChoiceBox fx:id="mat92" prefWidth="150.0" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="mat94" prefWidth="150.0" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="mat93" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="mat95" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="mat91" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="mat96" prefWidth="150.0" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="pre91" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pre92" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pre93" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pre94" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pre95" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pre96" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="cor91" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="cor92" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="cor93" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="cor94" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="cor95" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="cor96" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label text="Materia" />
+                  <Label text="Requisito" GridPane.columnIndex="1" />
+                  <Label text="Correquisito" GridPane.columnIndex="3" />
+                  <Label text="Requisito II" GridPane.columnIndex="2" />
+                  <ChoiceBox fx:id="pres91" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="pres92" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="pres93" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="pres94" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="pres95" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="pres96" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

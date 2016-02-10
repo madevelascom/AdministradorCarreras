@@ -3,11 +3,12 @@
 }
 
 .label {
-    -fx-font-size: 11pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: #1C140D;
     -fx-opacity: 0.8;
 }
+
 
 .label-bright {
     -fx-font-size: 11pt;
@@ -185,5 +186,8 @@
 }
 
 .choice-box {
-	
+	-fx-background-color: #FDFDF9;
+    -fx-padding: 3 10 4 20;
+    -fx-text-fill: #1C140D;
+    -fx-font-size: 9px;
 }

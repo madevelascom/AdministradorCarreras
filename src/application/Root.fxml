@@ -194,7 +194,7 @@
                                     <Label text="Sexto semestre" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                     <Label text="Séptimo semestre" GridPane.rowIndex="4" />
                                     <Label text="Octavo semestre" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="1">
+                                    <GridPane GridPane.rowIndex="1">
                                       <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -224,7 +224,7 @@
                                           <Label fx:id="pre15" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                           <Label fx:id="pre16" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                                           <Label fx:id="pre11" text="Label" GridPane.columnIndex="2" />
-                                          <Label fx:id="cod11" text="Label" />
+                                          <Label fx:id="cod11" styleClass="materia" stylesheets="@DarkTheme.css" text="Label" />
                                           <Label fx:id="cod12" text="Label" GridPane.rowIndex="1" />
                                           <Label fx:id="cod13" text="Label" GridPane.rowIndex="2" />
                                           <Label fx:id="cod14" text="Label" GridPane.rowIndex="3" />
@@ -237,7 +237,7 @@
                                        </children>
                                     </GridPane>
                                     <Label text="Noveno Semestre" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="3">
+                                    <GridPane GridPane.rowIndex="3">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -279,7 +279,7 @@
                                           <Label fx:id="cor46" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.rowIndex="5">
+                                    <GridPane GridPane.rowIndex="5">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -321,7 +321,7 @@
                                           <Label fx:id="cor76" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -363,7 +363,7 @@
                                           <Label fx:id="cor26" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -405,7 +405,7 @@
                                           <Label fx:id="cor56" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -447,7 +447,7 @@
                                           <Label fx:id="cor86" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -489,7 +489,7 @@
                                           <Label fx:id="cor36" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -531,7 +531,7 @@
                                           <Label fx:id="cor66" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
-                                    <GridPane gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                    <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
