@@ -39,7 +39,21 @@ public class Materia {
 		this.cret 		= new SimpleIntegerProperty(0);
 		this.crep 		= new SimpleIntegerProperty(0);
 	}
-
+	public String getNombre() {
+		return nom.get();
+	}
+	public String getID() {
+		return codigo.get();
+	}
+	public StringProperty IDProperty() {
+		return codigo;
+	}
+	public StringProperty NameProperty() {
+		return nom;
+	}
+	public StringProperty getCodigo() {
+		return codigo;
+	}
 	public StringProperty getCodigo() {
 		return codigo;
 	}
