@@ -39,6 +39,18 @@ public class Carrera {
 		this.description = new SimpleStringProperty(" ");;
 		this.estudiantes = new SimpleIntegerProperty(0);
 	}
+	public String getNombrec() {
+		return nombre.get();
+	}
+	public String getID() {
+		return codigo.get();
+	}
+	public StringProperty IDProperty() {
+		return codigo;
+	}
+	public StringProperty NameProperty() {
+		return nombre;
+	}
 	
 	public StringProperty getCodigo() {
 		return codigo;

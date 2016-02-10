@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -35,14 +37,15 @@ public class Controller extends Main implements Initializable{
 	@FXML 
 	private TableColumn<Carrera, String> codCarrera;
 	@FXML 
-	private TableColumn<Materia, String> nomMateria;
+	private  TableColumn<Materia, String> nomMateria;
 	@FXML 
 	private TableColumn<Materia, String> codMateria;
 	@FXML 
 	private TableColumn<MallaCurricular, String> carrera;
 	@FXML 
 	private TableColumn<MallaCurricular, Number> version;
-   
+	private ObservableList<Materia> masterData = Main.getMateriaData();
+	private ObservableList<Carrera> masterData2 = Main.getCarreraData();
 	@FXML
 	private Label lcprc ;
 	@FXML
@@ -527,9 +530,15 @@ public class Controller extends Main implements Initializable{
 		 int selectedIndex = materiaTable.getSelectionModel().getSelectedIndex();
 		 if (selectedIndex >= 0) {
 			 Alert alert = new Alert(AlertType.CONFIRMATION);
+<<<<<<< HEAD
 			 alert.setTitle("Confirmaci�n de borrado");
 			 alert.setHeaderText("Vas a borrar la materia que escogiste");
 			 alert.setContentText("�Est�s seguro?");
+=======
+			 alert.setTitle("Confirmación de borrado");
+			 alert.setHeaderText("Vas a borrar la materia que escogiste");
+			 alert.setContentText("¿Estás seguro?");
+>>>>>>> origin/master
 			 
 			 Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -545,9 +554,15 @@ public class Controller extends Main implements Initializable{
 		
 		if (selectedIndex >= 0) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
+<<<<<<< HEAD
 			alert.setTitle("Confirmaci�n de borrado");
 			alert.setHeaderText("Vas a borrar la carrera que escogiste");
 			alert.setContentText("�Est�s seguro?");
+=======
+			alert.setTitle("Confirmación de borrado");
+			alert.setHeaderText("Vas a borrar la carrera que escogiste");
+			alert.setContentText("¿Estás seguro?");
+>>>>>>> origin/master
 			 
 			Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -562,9 +577,15 @@ public class Controller extends Main implements Initializable{
 		int selectedIndex = mallaTable.getSelectionModel().getSelectedIndex();
 		if (selectedIndex >= 0) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
+<<<<<<< HEAD
 			alert.setTitle("Confirmaci�n de borrado");
 			alert.setHeaderText("Vas a borrar la malla que escogiste");
 			alert.setContentText("�Est�s seguro?");
+=======
+			alert.setTitle("Confirmación de borrado");
+			alert.setHeaderText("Vas a borrar la malla que escogiste");
+			alert.setContentText("¿Estás seguro?");
+>>>>>>> origin/master
 			 
 			Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -1152,7 +1173,64 @@ public class Controller extends Main implements Initializable{
 		
 	    
 	}
+<<<<<<< HEAD
 	
+=======
+		public  void buscarMateria(){
+		nomMateria . setCellValueFactory ( cellData -> cellData . getValue ().NameProperty()); 
+		codMateria . setCellValueFactory ( cellData -> cellData . getValue (). IDProperty ());	
+		FilteredList<Materia> filteredData = new FilteredList<>(masterData, p -> true);	
+		materiaSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (( person.getNombre()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getID().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+		SortedList<Materia> sortedData = new SortedList<>(filteredData);
+		sortedData.comparatorProperty().bind((ObservableValue<? extends Comparator<? super Materia>>) materiaTable.comparatorProperty());		materiaTable.setItems(sortedData);
+
+	}
+	public  void buscarCarrera(){
+		nomCarrera . setCellValueFactory ( cellData -> cellData . getValue ().NameProperty()); 
+		codCarrera . setCellValueFactory ( cellData -> cellData . getValue (). IDProperty ());	
+		FilteredList<Carrera> filteredData = new FilteredList<>(masterData2, p -> true);	
+		materiaSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (( person.getNombrec()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getID().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+		SortedList<Carrera> sortedData = new SortedList<>(filteredData);
+		sortedData.comparatorProperty().bind((ObservableValue<? extends Comparator<? super Carrera>>) materiaTable.comparatorProperty());
+		carreraTable.setItems(sortedData);
+
+	}
+		
+>>>>>>> origin/master
 	@FXML
 	private void handleNewMalla(){
 		ObservableList<Plan> planData = FXCollections.observableArrayList();
@@ -1193,7 +1271,8 @@ public class Controller extends Main implements Initializable{
 		mallaTable.setItems(Main.getMallaData());
 		carrera.setCellValueFactory(cellData -> cellData.getValue().getCarrera());
 		version.setCellValueFactory(cellData -> cellData.getValue().getVersion());
-		
+		buscarCarrera();
+		buscarMateria();
 		showMateriaDetails(null);
 		showCarreraDetails(null);
 		showMallaDetails(null);
