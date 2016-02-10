@@ -118,6 +118,37 @@ public class Main extends Application {
 	    }
 	}
 	
+	public static boolean showPlanEditDialog(ObservableList<Plan> planData, ObservableList<Materia> materiaData) {
+	    try {
+	        // Load the fxml file and create a new stage for the popup dialog.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("EditMalla.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+
+	        // Create the dialog Stage.
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Crear/Editar malla");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        dialogStage.getIcons().add(new Image("file:resources/appIcon.png"));
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the person into the controller.
+	        MallaController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);
+	        controller.setPlan(planData, materiaData);
+
+	        // Show the dialog and wait until the user closes it
+	        dialogStage.showAndWait();
+
+	        return controller.isOkClicked();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+	
 	public static ObservableList<Carrera> getCarreraData() {
         return carreraData;
     }
@@ -130,7 +161,9 @@ public class Main extends Application {
 		return mallaData;
 	}
 	
-	
+	public static HashMap<String, ObservableList<Plan>> getPlansData(){
+		return plansData;
+	}
 	
 	public static void main(String[] args) throws IOException {
 		materiaData = Materia.cargarMaterias();

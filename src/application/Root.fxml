@@ -580,9 +580,9 @@
                               </GridPane>
                               <HBox layoutX="241.0" layoutY="605.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
                                  <children>
-                                    <Button mnemonicParsing="false" text="Nuevo" />
-                                    <Button mnemonicParsing="false" text="Editar" />
-                                    <Button mnemonicParsing="false" text="Borrar" />
+                                    <Button mnemonicParsing="false" onAction="#handleNewMalla" text="Nuevo" />
+                                    <Button mnemonicParsing="false" onAction="#handleEditMalla" text="Editar" />
+                                    <Button mnemonicParsing="false" onAction="#borrarMalla" text="Borrar" />
                                  </children>
                               </HBox>
                            </children>

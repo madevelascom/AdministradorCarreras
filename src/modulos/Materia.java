@@ -118,8 +118,6 @@ public class Materia {
 			
 			for (Materia value : materiaData) {
 				bw.newLine();
-				System.out.println(value.getCodigo().getValue()+"|"+value.getNom().getValue()+"|"+value.getDescription().getValue()+"|"+
-			    		 value.getCret().getValue()+"|"+value.getCrep().getValue());
 			    bw.write(value.getCodigo().getValue()+"|"+value.getNom().getValue()+"|"+value.getDescription().getValue()+"|"+
 			    		 value.getCret().getValue()+"|"+value.getCrep().getValue());
 			}

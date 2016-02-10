@@ -1,7 +1,6 @@
 package application;
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -528,9 +527,9 @@ public class Controller extends Main implements Initializable{
 		 int selectedIndex = materiaTable.getSelectionModel().getSelectedIndex();
 		 if (selectedIndex >= 0) {
 			 Alert alert = new Alert(AlertType.CONFIRMATION);
-			 alert.setTitle("Confirmación de borrado");
+			 alert.setTitle("Confirmaciï¿½n de borrado");
 			 alert.setHeaderText("Vas a borrar la materia que escogiste");
-			 alert.setContentText("¿Estás seguro?");
+			 alert.setContentText("ï¿½Estï¿½s seguro?");
 			 
 			 Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -546,9 +545,9 @@ public class Controller extends Main implements Initializable{
 		
 		if (selectedIndex >= 0) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Confirmación de borrado");
+			alert.setTitle("Confirmaciï¿½n de borrado");
 			alert.setHeaderText("Vas a borrar la carrera que escogiste");
-			alert.setContentText("¿Estás seguro?");
+			alert.setContentText("ï¿½Estï¿½s seguro?");
 			 
 			Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -563,9 +562,9 @@ public class Controller extends Main implements Initializable{
 		int selectedIndex = mallaTable.getSelectionModel().getSelectedIndex();
 		if (selectedIndex >= 0) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Confirmación de borrado");
+			alert.setTitle("Confirmaciï¿½n de borrado");
 			alert.setHeaderText("Vas a borrar la malla que escogiste");
-			alert.setContentText("¿Estás seguro?");
+			alert.setContentText("ï¿½Estï¿½s seguro?");
 			 
 			Optional<ButtonType> result = alert.showAndWait();
 			 
@@ -1153,8 +1152,34 @@ public class Controller extends Main implements Initializable{
 		
 	    
 	}
-		
+	
 	@FXML
+	private void handleNewMalla(){
+		ObservableList<Plan> planData = FXCollections.observableArrayList();
+		boolean okClicked = Main.showPlanEditDialog(planData, materiaData);
+		if (okClicked) {
+            Main.getPlansData().put("test", planData);
+        }
+	}
+	
+	@FXML 
+	private void handleEditMalla(){
+		int selectedIndex = mallaTable.getSelectionModel().getSelectedIndex();
+		
+		if (selectedIndex >= 0) {
+			MallaCurricular selected = mallaTable.getItems().get(selectedIndex);
+			if(selected!= null){
+				ObservableList<Plan> planData = FXCollections.observableArrayList();
+				planData = plansData.get(selected.getLocation());
+				boolean okClicked = Main.showPlanEditDialog(planData, materiaData);
+				if (okClicked) {
+		            showMallaDetails(selected);
+		        }
+			}
+		}
+	}
+		
+	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 			
 		carreraTable.setItems(Main.getCarreraData());

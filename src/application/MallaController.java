@@ -3,458 +3,460 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import modulos.Materia;
 import modulos.Plan;
+import utils.ConnectedComboBox;
 
 public class MallaController extends Main implements Initializable{
 	
 	@FXML
-	private ChoiceBox mat11;
+	private ChoiceBox<String> mat11;
 	@FXML
-	private ChoiceBox pre11;
+	private ChoiceBox<?> pre11;
 	@FXML
-	private ChoiceBox pres11;
+	private ChoiceBox<?> pres11;
 	@FXML
-	private ChoiceBox cor11;
+	private ChoiceBox<?> cor11;
 	@FXML
-	private ChoiceBox mat12;
+	private ChoiceBox<String> mat12;
 	@FXML
-	private ChoiceBox pre12;
+	private ChoiceBox<?> pre12;
 	@FXML
-	private ChoiceBox pres12;
+	private ChoiceBox<?> pres12;
 	@FXML
-	private ChoiceBox cor12;
+	private ChoiceBox<?> cor12;
 	@FXML
-	private ChoiceBox mat13;
+	private ChoiceBox<String> mat13;
 	@FXML
-	private ChoiceBox pre13;
+	private ChoiceBox<?> pre13;
 	@FXML
-	private ChoiceBox pres13;
+	private ChoiceBox<?> pres13;
 	@FXML
-	private ChoiceBox cor13;
+	private ChoiceBox<?> cor13;
 	@FXML
-	private ChoiceBox mat14;
+	private ChoiceBox<String> mat14;
 	@FXML
-	private ChoiceBox pre14;
+	private ChoiceBox<?> pre14;
 	@FXML
-	private ChoiceBox pres14;
+	private ChoiceBox<?> pres14;
 	@FXML
-	private ChoiceBox cor14;
+	private ChoiceBox<?> cor14;
 	@FXML
-	private ChoiceBox mat15;
+	private ChoiceBox<String> mat15;
 	@FXML
-	private ChoiceBox pre15;
+	private ChoiceBox<?> pre15;
 	@FXML
-	private ChoiceBox pres15;
+	private ChoiceBox<?> pres15;
 	@FXML
-	private ChoiceBox cor15;
+	private ChoiceBox<?> cor15;
 	@FXML
-	private ChoiceBox mat16;
+	private ChoiceBox<String> mat16;
 	@FXML
-	private ChoiceBox pre16;
+	private ChoiceBox<?> pre16;
 	@FXML
-	private ChoiceBox pres16;
+	private ChoiceBox<?> pres16;
 	@FXML
-	private ChoiceBox cor16;
+	private ChoiceBox<?> cor16;
 	@FXML
-	private ChoiceBox mat21;
+	private ChoiceBox<String> mat21;
 	@FXML
-	private ChoiceBox pre21;
+	private ChoiceBox<?> pre21;
 	@FXML
-	private ChoiceBox pres21;
+	private ChoiceBox<?> pres21;
 	@FXML
-	private ChoiceBox cor21;
+	private ChoiceBox<?> cor21;
 	@FXML
-	private ChoiceBox mat22;
+	private ChoiceBox<String> mat22;
 	@FXML
-	private ChoiceBox pre22;
+	private ChoiceBox<?> pre22;
 	@FXML
-	private ChoiceBox pres22;
+	private ChoiceBox<?> pres22;
 	@FXML
-	private ChoiceBox cor22;
+	private ChoiceBox<?> cor22;
 	@FXML
-	private ChoiceBox mat23;
+	private ChoiceBox<String> mat23;
 	@FXML
-	private ChoiceBox pre23;
+	private ChoiceBox<?> pre23;
 	@FXML
-	private ChoiceBox pres23;
+	private ChoiceBox<?> pres23;
 	@FXML
-	private ChoiceBox cor23;
+	private ChoiceBox<?> cor23;
 	@FXML
-	private ChoiceBox mat24;
+	private ChoiceBox<String> mat24;
 	@FXML
-	private ChoiceBox pre24;
+	private ChoiceBox<?> pre24;
 	@FXML
-	private ChoiceBox pres24;
+	private ChoiceBox<?> pres24;
 	@FXML
-	private ChoiceBox cor24;
+	private ChoiceBox<?> cor24;
 	@FXML
-	private ChoiceBox mat25;
+	private ChoiceBox<String> mat25;
 	@FXML
-	private ChoiceBox pre25;
+	private ChoiceBox<?> pre25;
 	@FXML
-	private ChoiceBox pres25;
+	private ChoiceBox<?> pres25;
 	@FXML
-	private ChoiceBox cor25;
+	private ChoiceBox<?> cor25;
 	@FXML
-	private ChoiceBox mat26;
+	private ChoiceBox<String> mat26;
 	@FXML
-	private ChoiceBox pre26;
+	private ChoiceBox<?> pre26;
 	@FXML
-	private ChoiceBox pres26;
+	private ChoiceBox<?> pres26;
 	@FXML
-	private ChoiceBox cor26;
+	private ChoiceBox<?> cor26;
 	@FXML
-	private ChoiceBox mat31;
+	private ChoiceBox<String> mat31;
 	@FXML
-	private ChoiceBox pre31;
+	private ChoiceBox<?> pre31;
 	@FXML
-	private ChoiceBox pres31;
+	private ChoiceBox<?> pres31;
 	@FXML
-	private ChoiceBox cor31;
+	private ChoiceBox<?> cor31;
 	@FXML
-	private ChoiceBox mat32;
+	private ChoiceBox<String> mat32;
 	@FXML
-	private ChoiceBox pre32;
+	private ChoiceBox<?> pre32;
 	@FXML
-	private ChoiceBox pres32;
+	private ChoiceBox<?> pres32;
 	@FXML
-	private ChoiceBox cor32;
+	private ChoiceBox<?> cor32;
 	@FXML
-	private ChoiceBox mat33;
+	private ChoiceBox<String> mat33;
 	@FXML
-	private ChoiceBox pre33;
+	private ChoiceBox<?> pre33;
 	@FXML
-	private ChoiceBox pres33;
+	private ChoiceBox<?> pres33;
 	@FXML
-	private ChoiceBox cor33;
+	private ChoiceBox<?> cor33;
 	@FXML
-	private ChoiceBox mat34;
+	private ChoiceBox<String> mat34;
 	@FXML
-	private ChoiceBox pre34;
+	private ChoiceBox<?> pre34;
 	@FXML
-	private ChoiceBox pres34;
+	private ChoiceBox<?> pres34;
 	@FXML
-	private ChoiceBox cor34;
+	private ChoiceBox<?> cor34;
 	@FXML
-	private ChoiceBox mat35;
+	private ChoiceBox<String> mat35;
 	@FXML
-	private ChoiceBox pre35;
+	private ChoiceBox<?> pre35;
 	@FXML
-	private ChoiceBox pres35;
+	private ChoiceBox<?> pres35;
 	@FXML
-	private ChoiceBox cor35;
+	private ChoiceBox<?> cor35;
 	@FXML
-	private ChoiceBox mat36;
+	private ChoiceBox<String> mat36;
 	@FXML
-	private ChoiceBox pre36;
+	private ChoiceBox<?> pre36;
 	@FXML
-	private ChoiceBox pres36;
+	private ChoiceBox<?> pres36;
 	@FXML
-	private ChoiceBox cor36;
+	private ChoiceBox<?> cor36;
 	@FXML
-	private ChoiceBox mat41;
+	private ChoiceBox<String> mat41;
 	@FXML
-	private ChoiceBox pre41;
+	private ChoiceBox<?> pre41;
 	@FXML
-	private ChoiceBox pres41;
+	private ChoiceBox<?> pres41;
 	@FXML
-	private ChoiceBox cor41;
+	private ChoiceBox<?> cor41;
 	@FXML
-	private ChoiceBox mat42;
+	private ChoiceBox<String> mat42;
 	@FXML
-	private ChoiceBox pre42;
+	private ChoiceBox<?> pre42;
 	@FXML
-	private ChoiceBox pres42;
+	private ChoiceBox<?> pres42;
 	@FXML
-	private ChoiceBox cor42;
+	private ChoiceBox<?> cor42;
 	@FXML
-	private ChoiceBox mat43;
+	private ChoiceBox<String> mat43;
 	@FXML
-	private ChoiceBox pre43;
+	private ChoiceBox<?> pre43;
 	@FXML
-	private ChoiceBox pres43;
+	private ChoiceBox<?> pres43;
 	@FXML
-	private ChoiceBox cor43;
+	private ChoiceBox<?> cor43;
 	@FXML
-	private ChoiceBox mat44;
+	private ChoiceBox<String> mat44;
 	@FXML
-	private ChoiceBox pre44;
+	private ChoiceBox<?> pre44;
 	@FXML
-	private ChoiceBox pres44;
+	private ChoiceBox<?> pres44;
 	@FXML
-	private ChoiceBox cor44;
+	private ChoiceBox<?> cor44;
 	@FXML
-	private ChoiceBox mat45;
+	private ChoiceBox<String> mat45;
 	@FXML
-	private ChoiceBox pre45;
+	private ChoiceBox<?> pre45;
 	@FXML
-	private ChoiceBox pres45;
+	private ChoiceBox<?> pres45;
 	@FXML
-	private ChoiceBox cor45;
+	private ChoiceBox<?> cor45;
 	@FXML
-	private ChoiceBox mat46;
+	private ChoiceBox<String> mat46;
 	@FXML
-	private ChoiceBox pre46;
+	private ChoiceBox<?> pre46;
 	@FXML
-	private ChoiceBox pres46;
+	private ChoiceBox<?> pres46;
 	@FXML
-	private ChoiceBox cor46;
+	private ChoiceBox<?> cor46;
 	@FXML
-	private ChoiceBox mat51;
+	private ChoiceBox<String> mat51;
 	@FXML
-	private ChoiceBox pre51;
+	private ChoiceBox<?> pre51;
 	@FXML
-	private ChoiceBox pres51;
+	private ChoiceBox<?> pres51;
 	@FXML
-	private ChoiceBox cor51;
+	private ChoiceBox<?> cor51;
 	@FXML
-	private ChoiceBox mat52;
+	private ChoiceBox<String> mat52;
 	@FXML
-	private ChoiceBox pre52;
+	private ChoiceBox<?> pre52;
 	@FXML
-	private ChoiceBox pres52;
+	private ChoiceBox<?> pres52;
 	@FXML
-	private ChoiceBox cor52;
+	private ChoiceBox<?> cor52;
 	@FXML
-	private ChoiceBox mat53;
+	private ChoiceBox<String> mat53;
 	@FXML
-	private ChoiceBox pre53;
+	private ChoiceBox<?> pre53;
 	@FXML
-	private ChoiceBox pres53;
+	private ChoiceBox<?> pres53;
 	@FXML
-	private ChoiceBox cor53;
+	private ChoiceBox<?> cor53;
 	@FXML
-	private ChoiceBox mat54;
+	private ChoiceBox<String> mat54;
 	@FXML
-	private ChoiceBox pre54;
+	private ChoiceBox<?> pre54;
 	@FXML
-	private ChoiceBox pres54;
+	private ChoiceBox<?> pres54;
 	@FXML
-	private ChoiceBox cor54;
+	private ChoiceBox<?> cor54;
 	@FXML
-	private ChoiceBox mat55;
+	private ChoiceBox<String> mat55;
 	@FXML
-	private ChoiceBox pre55;
+	private ChoiceBox<?> pre55;
 	@FXML
-	private ChoiceBox pres55;
+	private ChoiceBox<?> pres55;
 	@FXML
-	private ChoiceBox cor55;
+	private ChoiceBox<?> cor55;
 	@FXML
-	private ChoiceBox mat56;
+	private ChoiceBox<String> mat56;
 	@FXML
-	private ChoiceBox pre56;
+	private ChoiceBox<?> pre56;
 	@FXML
-	private ChoiceBox pres56;
+	private ChoiceBox<?> pres56;
 	@FXML
-	private ChoiceBox cor56;
+	private ChoiceBox<?> cor56;
 	@FXML
-	private ChoiceBox mat61;
+	private ChoiceBox<String> mat61;
 	@FXML
-	private ChoiceBox pre61;
+	private ChoiceBox<?> pre61;
 	@FXML
-	private ChoiceBox pres61;
+	private ChoiceBox<?> pres61;
 	@FXML
-	private ChoiceBox cor61;
+	private ChoiceBox<?> cor61;
 	@FXML
-	private ChoiceBox mat62;
+	private ChoiceBox<String> mat62;
 	@FXML
-	private ChoiceBox pre62;
+	private ChoiceBox<?> pre62;
 	@FXML
-	private ChoiceBox pres62;
+	private ChoiceBox<?> pres62;
 	@FXML
-	private ChoiceBox cor62;
+	private ChoiceBox<?> cor62;
 	@FXML
-	private ChoiceBox mat63;
+	private ChoiceBox<String> mat63;
 	@FXML
-	private ChoiceBox pre63;
+	private ChoiceBox<?> pre63;
 	@FXML
-	private ChoiceBox pres63;
+	private ChoiceBox<?> pres63;
 	@FXML
-	private ChoiceBox cor63;
+	private ChoiceBox<?> cor63;
 	@FXML
-	private ChoiceBox mat64;
+	private ChoiceBox<String> mat64;
 	@FXML
-	private ChoiceBox pre64;
+	private ChoiceBox<?> pre64;
 	@FXML
-	private ChoiceBox pres64;
+	private ChoiceBox<?> pres64;
 	@FXML
-	private ChoiceBox cor64;
+	private ChoiceBox<?> cor64;
 	@FXML
-	private ChoiceBox mat65;
+	private ChoiceBox<String> mat65;
 	@FXML
-	private ChoiceBox pre65;
+	private ChoiceBox<?> pre65;
 	@FXML
-	private ChoiceBox pres65;
+	private ChoiceBox<?> pres65;
 	@FXML
-	private ChoiceBox cor65;
+	private ChoiceBox<?> cor65;
 	@FXML
-	private ChoiceBox mat66;
+	private ChoiceBox<String> mat66;
 	@FXML
-	private ChoiceBox pre66;
+	private ChoiceBox<?> pre66;
 	@FXML
-	private ChoiceBox pres66;
+	private ChoiceBox<?> pres66;
 	@FXML
-	private ChoiceBox cor66;
+	private ChoiceBox<?> cor66;
 	@FXML
-	private ChoiceBox mat71;
+	private ChoiceBox<String> mat71;
 	@FXML
-	private ChoiceBox pre71;
+	private ChoiceBox<?> pre71;
 	@FXML
-	private ChoiceBox pres71;
+	private ChoiceBox<?> pres71;
 	@FXML
-	private ChoiceBox cor71;
+	private ChoiceBox<?> cor71;
 	@FXML
-	private ChoiceBox mat72;
+	private ChoiceBox<String> mat72;
 	@FXML
-	private ChoiceBox pre72;
+	private ChoiceBox<?> pre72;
 	@FXML
-	private ChoiceBox pres72;
+	private ChoiceBox<?> pres72;
 	@FXML
-	private ChoiceBox cor72;
+	private ChoiceBox<?> cor72;
 	@FXML
-	private ChoiceBox mat73;
+	private ChoiceBox<String> mat73;
 	@FXML
-	private ChoiceBox pre73;
+	private ChoiceBox<?> pre73;
 	@FXML
-	private ChoiceBox pres73;
+	private ChoiceBox<?> pres73;
 	@FXML
-	private ChoiceBox cor73;
+	private ChoiceBox<?> cor73;
 	@FXML
-	private ChoiceBox mat74;
+	private ChoiceBox<String> mat74;
 	@FXML
-	private ChoiceBox pre74;
+	private ChoiceBox<?> pre74;
 	@FXML
-	private ChoiceBox pres74;
+	private ChoiceBox<?> pres74;
 	@FXML
-	private ChoiceBox cor74;
+	private ChoiceBox<?> cor74;
 	@FXML
-	private ChoiceBox mat75;
+	private ChoiceBox<String> mat75;
 	@FXML
-	private ChoiceBox pre75;
+	private ChoiceBox<?> pre75;
 	@FXML
-	private ChoiceBox pres75;
+	private ChoiceBox<?> pres75;
 	@FXML
-	private ChoiceBox cor75;
+	private ChoiceBox<?> cor75;
 	@FXML
-	private ChoiceBox mat76;
+	private ChoiceBox<String> mat76;
 	@FXML
-	private ChoiceBox pre76;
+	private ChoiceBox<?> pre76;
 	@FXML
-	private ChoiceBox pres76;
+	private ChoiceBox<?> pres76;
 	@FXML
-	private ChoiceBox cor76;
+	private ChoiceBox<?> cor76;
 	@FXML
-	private ChoiceBox mat81;
+	private ChoiceBox<String> mat81;
 	@FXML
-	private ChoiceBox pre81;
+	private ChoiceBox<?> pre81;
 	@FXML
-	private ChoiceBox pres81;
+	private ChoiceBox<?> pres81;
 	@FXML
-	private ChoiceBox cor81;
+	private ChoiceBox<?> cor81;
 	@FXML
-	private ChoiceBox mat82;
+	private ChoiceBox<String> mat82;
 	@FXML
-	private ChoiceBox pre82;
+	private ChoiceBox<?> pre82;
 	@FXML
-	private ChoiceBox pres82;
+	private ChoiceBox<?> pres82;
 	@FXML
-	private ChoiceBox cor82;
+	private ChoiceBox<?> cor82;
 	@FXML
-	private ChoiceBox mat83;
+	private ChoiceBox<String> mat83;
 	@FXML
-	private ChoiceBox pre83;
+	private ChoiceBox<?> pre83;
 	@FXML
-	private ChoiceBox pres83;
+	private ChoiceBox<?> pres83;
 	@FXML
-	private ChoiceBox cor83;
+	private ChoiceBox<?> cor83;
 	@FXML
-	private ChoiceBox mat84;
+	private ChoiceBox<String> mat84;
 	@FXML
-	private ChoiceBox pre84;
+	private ChoiceBox<?> pre84;
 	@FXML
-	private ChoiceBox pres84;
+	private ChoiceBox<?> pres84;
 	@FXML
-	private ChoiceBox cor84;
+	private ChoiceBox<?> cor84;
 	@FXML
-	private ChoiceBox mat85;
+	private ChoiceBox<String> mat85;
 	@FXML
-	private ChoiceBox pre85;
+	private ChoiceBox<?> pre85;
 	@FXML
-	private ChoiceBox pres85;
+	private ChoiceBox<?> pres85;
 	@FXML
-	private ChoiceBox cor85;
+	private ChoiceBox<?> cor85;
 	@FXML
-	private ChoiceBox mat86;
+	private ChoiceBox<String> mat86;
 	@FXML
-	private ChoiceBox pre86;
+	private ChoiceBox<?> pre86;
 	@FXML
-	private ChoiceBox pres86;
+	private ChoiceBox<?> pres86;
 	@FXML
-	private ChoiceBox cor86;
+	private ChoiceBox<?> cor86;
 	@FXML
-	private ChoiceBox mat91;
+	private ChoiceBox<String> mat91;
 	@FXML
-	private ChoiceBox pre91;
+	private ChoiceBox<?> pre91;
 	@FXML
-	private ChoiceBox pres91;
+	private ChoiceBox<?> pres91;
 	@FXML
-	private ChoiceBox cor91;
+	private ChoiceBox<?> cor91;
 	@FXML
-	private ChoiceBox mat92;
+	private ChoiceBox<String> mat92;
 	@FXML
-	private ChoiceBox pre92;
+	private ChoiceBox<?> pre92;
 	@FXML
-	private ChoiceBox pres92;
+	private ChoiceBox<?> pres92;
 	@FXML
-	private ChoiceBox cor92;
+	private ChoiceBox<?> cor92;
 	@FXML
-	private ChoiceBox mat93;
+	private ChoiceBox<String> mat93;
 	@FXML
-	private ChoiceBox pre93;
+	private ChoiceBox<?> pre93;
 	@FXML
-	private ChoiceBox pres93;
+	private ChoiceBox<?> pres93;
 	@FXML
-	private ChoiceBox cor93;
+	private ChoiceBox<?> cor93;
 	@FXML
-	private ChoiceBox mat94;
+	private ChoiceBox<String> mat94;
 	@FXML
-	private ChoiceBox pre94;
+	private ChoiceBox<?> pre94;
 	@FXML
-	private ChoiceBox pres94;
+	private ChoiceBox<?> pres94;
 	@FXML
-	private ChoiceBox cor94;
+	private ChoiceBox<?> cor94;
 	@FXML
-	private ChoiceBox mat95;
+	private ChoiceBox<String> mat95;
 	@FXML
-	private ChoiceBox pre95;
+	private ChoiceBox<?> pre95;
 	@FXML
-	private ChoiceBox pres95;
+	private ChoiceBox<?> pres95;
 	@FXML
-	private ChoiceBox cor95;
+	private ChoiceBox<?> cor95;
 	@FXML
-	private ChoiceBox mat96;
+	private ChoiceBox<String> mat96;
 	@FXML
-	private ChoiceBox pre96;
+	private ChoiceBox<?> pre96;
 	@FXML
-	private ChoiceBox pres96;
+	private ChoiceBox<?> pres96;
 	@FXML
-	private ChoiceBox cor96;
+	private ChoiceBox<?> cor96;
 
 
 
 	
 	private Stage dialogStage;
-    private Materia mat;
     private boolean okClicked = false;
+    private ObservableList<String> choices = FXCollections.observableArrayList();
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -462,10 +464,74 @@ public class MallaController extends Main implements Initializable{
         this.dialogStage = dialogStage;
     }
 	
-	public void setPlan(Plan pl){
+	public void setPlan(ObservableList<Plan> planData, ObservableList<Materia> materiaData){
+		
+		for(Materia mat: materiaData){
+			choices.add(mat.getCodigo().getValue()+" "+mat.getNom().getValue());
+		}
+		if (planData.isEmpty()){
+			
+			ConnectedComboBox<String> connectedComboBox = new ConnectedComboBox<>(choices);
+			connectedComboBox.addComboBox(mat11);
+			connectedComboBox.addComboBox(mat12);
+			connectedComboBox.addComboBox(mat13);
+			connectedComboBox.addComboBox(mat14);
+			connectedComboBox.addComboBox(mat15);
+			connectedComboBox.addComboBox(mat16);
+			connectedComboBox.addComboBox(mat21);
+			connectedComboBox.addComboBox(mat22);
+			connectedComboBox.addComboBox(mat23);
+			connectedComboBox.addComboBox(mat24);
+			connectedComboBox.addComboBox(mat25);
+			connectedComboBox.addComboBox(mat26);
+			connectedComboBox.addComboBox(mat31);
+			connectedComboBox.addComboBox(mat32);
+			connectedComboBox.addComboBox(mat33);
+			connectedComboBox.addComboBox(mat34);
+			connectedComboBox.addComboBox(mat35);
+			connectedComboBox.addComboBox(mat36);
+			connectedComboBox.addComboBox(mat41);
+			connectedComboBox.addComboBox(mat42);
+			connectedComboBox.addComboBox(mat43);
+			connectedComboBox.addComboBox(mat44);
+			connectedComboBox.addComboBox(mat45);
+			connectedComboBox.addComboBox(mat46);
+			connectedComboBox.addComboBox(mat51);
+			connectedComboBox.addComboBox(mat52);
+			connectedComboBox.addComboBox(mat53);
+			connectedComboBox.addComboBox(mat54);
+			connectedComboBox.addComboBox(mat55);
+			connectedComboBox.addComboBox(mat56);
+			connectedComboBox.addComboBox(mat61);
+			connectedComboBox.addComboBox(mat62);
+			connectedComboBox.addComboBox(mat63);
+			connectedComboBox.addComboBox(mat64);
+			connectedComboBox.addComboBox(mat65);
+			connectedComboBox.addComboBox(mat66);
+			connectedComboBox.addComboBox(mat71);
+			connectedComboBox.addComboBox(mat72);
+			connectedComboBox.addComboBox(mat73);
+			connectedComboBox.addComboBox(mat74);
+			connectedComboBox.addComboBox(mat75);
+			connectedComboBox.addComboBox(mat76);
+			connectedComboBox.addComboBox(mat81);
+			connectedComboBox.addComboBox(mat82);
+			connectedComboBox.addComboBox(mat83);
+			connectedComboBox.addComboBox(mat84);
+			connectedComboBox.addComboBox(mat85);
+			connectedComboBox.addComboBox(mat86);
+			connectedComboBox.addComboBox(mat91);
+			connectedComboBox.addComboBox(mat92);
+			connectedComboBox.addComboBox(mat93);
+			connectedComboBox.addComboBox(mat94);
+			connectedComboBox.addComboBox(mat95);
+			connectedComboBox.addComboBox(mat96);
+
+		}
 		
 	}
 	public boolean isOkClicked() {
         return okClicked;
     }
+	
 }
