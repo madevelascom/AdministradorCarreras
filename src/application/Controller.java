@@ -1,6 +1,7 @@
 package application;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
 import java.util.Optional;
@@ -1147,9 +1148,7 @@ public class Controller extends Main implements Initializable{
 		            showCarreraDetails(selected);
 		        }
 		    } 
-		}
-		
-	    
+		}    
 	}
 	
 	@FXML
@@ -1249,12 +1248,20 @@ public class Controller extends Main implements Initializable{
 	}
 
 	@FXML
-	private void handleNewMalla(){
+	private void handleNewMalla() throws IOException{
 		ObservableList<Plan> planData = FXCollections.observableArrayList();
-		boolean okClicked = Main.showPlanEditDialog(planData, materiaData);
-		if (okClicked) {
-            Main.getPlansData().put("test", planData);
-        }
+		MallaCurricular temp = new MallaCurricular();
+		boolean okInfo = Main.showMallaEditDialog(temp);
+		if (okInfo){
+			boolean okClicked = Main.showPlanEditDialog(planData, materiaData);
+			if (okClicked) {
+				Main.getMallaData().add(temp);
+				Main.getPlansData().put(temp.getLocation(), planData);
+				Plan.guardarPlan(planData, temp.getLocation());
+	            
+	        }
+		}
+		
 	}
 	
 	@FXML 

@@ -86,32 +86,32 @@ public class MateriaController extends Main implements Initializable{
         String errorMessage = "";
 
         if (codigo.getText() == null || codigo.getText().length() == 0) {
-            errorMessage += "Código incorrecto \n"; 
+            errorMessage += "CÃ³digo incorrecto \n"; 
         }
         if (nombre.getText() == null || nombre.getText().length() == 0) {
             errorMessage += "Nombre incorrecto \n"; 
         }
         if (descripcion.getText() == null || descripcion.getText().length() == 0) {
-            errorMessage += "Descripción vacía \n"; 
+            errorMessage += "Descripciï¿½n vacï¿½a \n"; 
         }
 
         if (cte.getText() == null || cte.getText().length() == 0) {
-            errorMessage += "Cantidad de créditos teóricos vacío \n"; 
+            errorMessage += "Cantidad de crÃ©ditos teï¿½ricos vacï¿½o \n"; 
         } else {
             try {
                 Integer.parseInt(cte.getText());
             } catch (NumberFormatException e) {
-                errorMessage += "Cantidad de créditos teóricos no válida (debe ser un entero)!\n"; 
+                errorMessage += "Cantidad de crÃ©ditos teï¿½ricos no vÃ¡lida (debe ser un entero)!\n"; 
             }
         }
         
         if (cpr.getText() == null || cpr.getText().length() == 0) {
-            errorMessage += "Cantidad de créditos prácticos vacío \n"; 
+            errorMessage += "Cantidad de crÃ©ditos prï¿½cticos vacï¿½o \n"; 
         } else {
             try {
                 Integer.parseInt(cpr.getText());
             } catch (NumberFormatException e) {
-                errorMessage += "Cantidad de créditos prácticos no válida (debe ser un entero)!\n"; 
+                errorMessage += "Cantidad de crÃ©ditos prï¿½cticos no vÃ¡lida (debe ser un entero)!\n"; 
             }
         }
         

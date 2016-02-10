@@ -397,7 +397,6 @@
                   <ChoiceBox fx:id="cor66" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                   <Label text="Materia" />
                   <Label text="Requisito" GridPane.columnIndex="1" />
-                  <Label text="Correquisito" GridPane.columnIndex="3" />
                   <Label text="Requisito II" GridPane.columnIndex="2" />
                   <ChoiceBox fx:id="pres61" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <ChoiceBox fx:id="pres62" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -456,5 +455,11 @@
             </GridPane>
          </children>
       </GridPane>
+      <HBox layoutX="780.0" layoutY="628.0" spacing="30.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleOk" text="Aceptar" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancelar" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

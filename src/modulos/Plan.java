@@ -2,6 +2,7 @@ package modulos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -105,7 +106,10 @@ public class Plan {
 	
 	public static void guardarPlan(ObservableList<Plan> plan, String dir) throws IOException{
 		
-		URL url	= MallaCurricular.class.getResource(dir);	
+		File file = new File("C:/Users/Administrator/workspace/AdminMallasCurriculares/bin/modulos/"+dir);
+		file.createNewFile();
+		
+		URL url	= MallaCurricular.class.getResource(file.getName());	
 		FileWriter fl = new FileWriter(url.getPath());
 		BufferedWriter bw = new BufferedWriter(fl);
 		

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="280.0" prefWidth="380.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MallaInfoController">
+   <children>
+      <HBox layoutX="129.0" layoutY="233.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleOk" text="Aceptar" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancelar" />
+         </children>
+      </HBox>
+      <GridPane layoutX="29.0" layoutY="46.0" prefHeight="140.0" prefWidth="323.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="173.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Carrera" />
+            <Label text="Versión" GridPane.rowIndex="1" />
+            <Label text="Elaborado por" GridPane.rowIndex="2" />
+            <TextField fx:id="carrera" prefHeight="30.0" GridPane.columnIndex="1" />
+            <TextField fx:id="version" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="elaborado" prefHeight="37.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

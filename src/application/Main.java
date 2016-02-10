@@ -118,6 +118,37 @@ public class Main extends Application {
 	    }
 	}
 	
+	public static boolean showMallaEditDialog(MallaCurricular mat) {
+	    try {
+	        // Load the fxml file and create a new stage for the popup dialog.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(Main.class.getResource("EditMallaInfo.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+
+	        // Create the dialog Stage.
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Crear/Editar malla");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        dialogStage.getIcons().add(new Image("file:resources/appIcon.png"));
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the person into the controller.
+	        MallaInfoController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);
+	        controller.setMallaCurricular(mat);
+
+	        // Show the dialog and wait until the user closes it
+	        dialogStage.showAndWait();
+
+	        return controller.isOkClicked();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+	
 	public static boolean showPlanEditDialog(ObservableList<Plan> planData, ObservableList<Materia> materiaData) {
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.

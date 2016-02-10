@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -28,16 +29,24 @@ public class MallaCurricular {
 		this.carrera = new SimpleStringProperty(carrera);
 		this.version = new SimpleIntegerProperty(version);
 		this.elaborado = new SimpleStringProperty(elaborado);
-		this.fecha = new SimpleStringProperty(fecha);
+		this.fecha = new SimpleStringProperty(fecha);;
 		this.location = location;
 	}
 	
+	public MallaCurricular(String carrera, int version, String elaborado){
+		this.carrera = new SimpleStringProperty(carrera);
+		this.version = new SimpleIntegerProperty(version);
+		this.elaborado = new SimpleStringProperty(elaborado);
+		this.fecha = new SimpleStringProperty(LocalDate.now().toString());
+		this.location = carrera+version;
+	}
+	
 	public MallaCurricular(){
-		this.carrera = new SimpleStringProperty("");
+		this.carrera = new SimpleStringProperty(" ");
 		this.version = new SimpleIntegerProperty(0);
-		this.elaborado = new SimpleStringProperty("");
-		this.fecha = new SimpleStringProperty("");
-		this.location = "";
+		this.elaborado = new SimpleStringProperty(" ");
+		this.fecha = new SimpleStringProperty(" ");
+		this.location = " ";
 	}
 
 	public StringProperty getCarrera() {
