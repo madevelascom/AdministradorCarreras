@@ -45,14 +45,12 @@ public class Materia {
 	public String getID() {
 		return codigo.get();
 	}
+	
 	public StringProperty IDProperty() {
 		return codigo;
 	}
 	public StringProperty NameProperty() {
 		return nom;
-	}
-	public StringProperty getCodigo() {
-		return codigo;
 	}
 	public StringProperty getCodigo() {
 		return codigo;

@@ -51,7 +51,14 @@ public class MallaCurricular {
 	public IntegerProperty getVersion() {
 		return version;
 	}
-
+	
+	public IntegerProperty IDProperty() {
+		return version;
+	}
+	public StringProperty NameProperty() {
+		return carrera;
+	}
+	
 	public void setVersion(IntegerProperty version) {
 		this.version = version;
 	}
