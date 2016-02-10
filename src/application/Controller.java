@@ -16,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import modulos.Carrera;
 import modulos.MallaCurricular;
 import modulos.Materia;
@@ -71,6 +72,13 @@ public class Controller extends Main implements Initializable{
 	private Label lFecha;
 	@FXML
 	private Label lCreator;
+	
+	@FXML
+	private TextField materiaSearch;
+	@FXML
+	private TextField carreraSearch;
+	@FXML
+	private TextField mallaSearch;
 	
 	//1 Semestre
 	@FXML
