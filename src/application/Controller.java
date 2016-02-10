@@ -1179,8 +1179,7 @@ public class Controller extends Main implements Initializable{
             });
         });
 		SortedList<Materia> sortedData = new SortedList<>(filteredData);
-		sortedData.comparatorProperty().bind((ObservableValue<? extends Comparator<? super Materia>>) materiaTable.comparatorProperty());
-		materiaTable.setItems(sortedData);
+		sortedData.comparatorProperty().bind((ObservableValue<? extends Comparator<? super Materia>>) materiaTable.comparatorProperty());		materiaTable.setItems(sortedData);
 
 	}
 	public  void buscarCarrera(){
